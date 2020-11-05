@@ -1,0 +1,14 @@
+const socket = Net.WebSocket.connect("ws://localhost:4000/");
+
+socket.on("connect", || stdout.println("connect"));
+socket.on("binary", |data| stdout.println("binary", data));
+socket.on("error", |errmsg| stdout.println("error", errmsg));
+socket.on("close", || stdout.println("close"));
+
+socket.on("text", function(data) {
+  stdout.println("text", data);
+  const json = JSON.parse(data);
+  const planet = json.name;
+  stdout.println("planet", planet);
+  $(.css-planet-monitor).text = String.$(Obi-Wan currently on {planet});
+});

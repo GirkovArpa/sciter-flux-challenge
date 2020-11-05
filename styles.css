@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Lucida Console, Monaco5, monospace;
+  height: max-content;
+  background: linear-gradient(to bottom, #1b3061 0%, #192b55 100%);
+}
+
+.css-root {
+  max-width: 800px;
+  min-width: 640px;
+  border-radius: 2px;
+  border: 3px solid #35769A;
+  box-shadow: 0px 0px 10px 1px rgba(53, 118, 154, 0.5), inset 0px 0px 10px 1px rgba(53, 118, 154, 0.5);
+  padding: 5px;
+}
+
+.css-planet-monitor {
+  margin-top: 0;
+  border: 5px solid #87AFE7;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 1px rgba(135, 175, 231, 0.5), inset 0px 0px 10px 1px rgba(135, 175, 231, 0.5);
+  padding: 16px;
+  background-color: #2F5093;
+  color: #EDE66A;
+  text-shadow: 0px 0px 10px rgba(237, 230, 106, 0.6);
+}
+
+.css-scrollable-list {
+  flow: horizontal;
+}
+
+.css-slots {
+  width: 1*;
+  padding: 0;
+  list-style-type: none;
+  margin: 0 7px 0 0;
+}
+
+.css-slot {
+  padding: 16px;
+  border: 5px solid hsla(167, 82%, 68%, 1);
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 1px rgba(105, 240, 210, 0.45), inset 0px 0px 10px 1px rgba(105, 240, 210, 0.45);
+  color: #69F0D2;
+  font-size: 18px;
+  height: 1.7em;
+  vertical-align: middle;
+}
+
+.css-slot h3, .css-slot h4, .css-slot h5, .css-slot h6 {
+  margin: 0;
+}
+
+.css-slot+.css-slot {
+  margin-top: 7px;
+}
+
+.css-scroll-buttons {
+  flow: vertical;
+  width: 20%;
+  height: 393px;
+}
+
+.css-scroll-buttons button {
+  height: calc(50% - 14px);
+  width: 1*; /* flex: 1; */ 
+  border: 5px solid #69F0D2;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 1px #69F0D2, inset 0px 0px 10px 1px #69F0D2;
+  background: #39697A;
+}
+
+.css-button-down {
+  margin-top: 7px;
+}
+
+.css-button-up::after {
+  line-height: 181px;
+  display: block;
+  content: '\21D1';
+  display: block;
+  color: #69F0D2;
+  font-size: 30px;
+  text-shadow: 0px 0px 10px #69F0D2;
+}
+
+.css-button-down::after {
+  line-height: 181px;
+  content: '\21D3';
+  display: block;
+  color: #69F0D2;
+  font-size: 30px;
+  text-shadow: 0px 0px 10px #69F0D2;
+}
+
+.css-button-disabled {
+  opacity: 0.5;
+}

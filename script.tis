@@ -1,1 +1,46 @@
+const socket = Net.WebSocket.connect("ws://localhost:4000/");
 
+socket.on("connect", || stdout.println("connect"));
+socket.on("binary", |data| stdout.println("binary", data));
+socket.on("error", |errmsg| stdout.println("error", errmsg));
+socket.on("close", || stdout.println("close"));
+
+async function fetchJedi(id) {
+  const [response] = await view.request { 
+    url: String.$(http://localhost:3000/dark-jedis/{id}), 
+    type: #get,
+    output: #json,
+    noCache: true
+  };
+  return response;
+} 
+
+async function loadJedis(row, jedi) {
+  const { id, name, homeworld, master, apprentice } = await fetchJedi(jedi);
+  stdout.println("data", id, name, homeworld, master, apprentice);
+
+  const slots = $$(.css-slot);
+  const slot = slots[row];
+  slot.$(h3).text = name;
+  slot.$(h6).text = String.$(Homeworld: {homeworld.name});
+
+  if (row < 4 && apprentice.id != null) {
+    await loadJedis(row + 1, apprentice.id);
+  }
+}
+
+loadJedis(0, 3616);
+
+async function planetChanged(text) {
+  stdout.println("text", text);
+  const json = JSON.parse(text);
+  const planet = json.name;
+  stdout.println("planet", planet);
+  $(.css-planet-monitor).text = String.$(Obi-Wan currently on {planet});
+}
+
+socket.on("text", planetChanged);
+
+$(.css-button-down) << event click {
+  stdout.println("click");
+};
